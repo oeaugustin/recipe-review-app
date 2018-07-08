@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food</title>
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="food.css">
+</head>
+  <body>
+    <button id="meals">PICK ME</button>
+    <img id="foodImg" src="" alt="">
+    <h1></h1>
+    <h2></h2>
+    <h3>Messages</h3>
+    <ul class="meals"></ul>
+    <p></p>
+    <h3 class="thankyou">Thanks for visiting our page! If you enjoyed our recipes please feel free to visit the Wikipedia page to learn about culture and also leave comments.</h3>
+    <ul id="country"></ul>
+
+    <h4>Add a comment</h4>
+    <ul class="comments">
+    <% for(var i=0; i<comment.length; i++) {%>
+      <li class="comment">
+        <span><%= comment[i].comment %></span>
+        <!-- <span><%= comment[i].msg %></span> -->
+        <span><%= comment[i].thumbUp %></span>
+        <span><%= comment[i].thumbDown %></span>
+        <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+        <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+        <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      </li>
+    <% } %>
+    </ul>
+    <h5>Write the name of the recipe followed by your comment in order to keep comments organized</h5>
+    <form action="/comment" method="POST">
+      <input type="text" placeholder="comment" name="comment">
+      <button id="commentSubmit" type="submit">Submit</button>
+
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="food.js"></script>
+  </body>
+</html>
